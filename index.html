@@ -1,55 +1,54 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Ramen Rater</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script defer type="text/javascript" src="./src/index.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramen Rating App</title>
 </head>
-
 <body>
   <header>
-    <h3>Ramen Rater</h3>
+    <h1>Ramen Rating App</h1>
   </header>
-
-  <!-- Ramen Menu -->
-  <div id="ramen-menu">
-    <!-- Ramen Images Here -->
-  </div>
-
-  <!-- Ramen Details -->
-  <div id="ramen-detail">
-    <img class="detail-image" src="./assets/image-placeholder.jpg" alt="Insert Name Here" />
-    <h2 class="name">Insert Name Here</h2>
-    <h3 class="restaurant">Insert Restaurant Here</h3>
-  </div>
-
-  <h3>Rating:</h3>
-  <p>
-    <span id='rating-display'>Insert rating here</span> / 10
-  </p>
-  <h3>Comment:</h3>
-  <p id='comment-display'>
-    Insert comment here
-  </p>
-
-  <!-- New Ramen Form -->
-  <form id="new-ramen">
-    <h4>Add New Ramen</h4>
-    <label for="name">Name: </label>
-    <input type="text" name="name" id="new-name" />
-    <label for="restaurant">Restaurant: </label>
-    <input type="text" name="restaurant" id="new-restaurant" />
-    <label for="image">Image: </label>
-    <input type="text" name="image" id="new-image" />
-    <label for="rating">Rating: </label>
-    <input type="number" name="rating" id="new-rating" />
-    <label for="new-comment">Comment: </label>
-    <textarea name="new-comment" id="new-comment"></textarea>
-    <input type="submit" value="Create" />
-  </form>
-
+  <main>
+    <section>
+      <h2>Menu</h2>
+      <div id="ramen-menu">
+        <!-- Ramen images will be dynamically added here -->
+      </div>
+    </section>
+    <section>
+      <h2>Details</h2>
+      <div id="ramen-detail">
+        <h3 id="ramen-name">Insert ramen name here</h3>
+        <img id="ramen-image" src="" alt="Ramen image">
+        <p>Rating: <span id="ramen-rating">Insert rating here</span></p>
+        <p>Comment: <span id="ramen-comment">Insert comment here</span></p>
+      </div>
+      <form id="new-ramen">
+        <h3>Add a new ramen</h3>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="new-name">
+        <label for="restaurant">Restaurant:</label>
+        <input type="text" name="restaurant" id="new-restaurant">
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" id="new-image">
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" id="new-rating" min="1" max="5">
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="new-comment"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+      <form id="edit-ramen">
+        <h3>Edit ramen details</h3>
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" id="edit-rating" min="1" max="5">
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="edit-comment"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+      <button id="delete-ramen">Delete this ramen</button>
+    </section>
+  </main>
+  <script src="index.js"></script>
 </body>
-
 </html>
